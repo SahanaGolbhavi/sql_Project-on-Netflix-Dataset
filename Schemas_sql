@@ -1,0 +1,19 @@
+-- SCHEMAS of Netflix
+
+```DROP TABLE IF EXISTS netflix;
+CREATE TABLE IF NOT EXISTS Netflix_Tab(
+    show_id	varchar(10),
+    type varchar(10),
+    title varchar(150),
+    director varchar(210),
+    cast varchar(1000),	
+    country	varchar(150),
+    date_added	varchar(50),
+    release_year INT,
+    rating varchar(10),
+    duration varchar(15),
+    listed_in varchar(150),
+    description varchar(250));```
+
+
+```SELECT * FROM Netflix_TAB;```
