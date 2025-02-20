@@ -218,5 +218,13 @@ FROM new_table
 GROUP BY 1;
 ```
 
+## Findings and Conclusion
+Content Distribution: The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
+Common Ratings: Insights into the most common ratings provide an understanding of the content's target audience.
+Geographical Insights: The top countries and the average content releases by India highlight regional content distribution.
+Content Categorization: Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
 
+This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
 
+## Snowflake
+In my SQL project, I used the **Snowflake Cloud Data Platform** to write queries, which makes the syntax slightly different from traditional SQL. Snowflake’s unique features, such as **automatic scaling, zero-copy cloning, and native support for semi-structured data like JSON and Parquet**, made it an ideal choice for handling large datasets efficiently. Unlike other databases, Snowflake **separates storage and compute**, allowing for better performance and cost optimization. Additionally, its **built-in support for time travel and data sharing** enabled seamless data recovery and collaboration across teams.
