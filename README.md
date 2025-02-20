@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS Netflix_Tab(
 
 ### 1 Count the number of Movies and TV shows
 
-sql```
+```sql
 SELECT 
 	type,
     count(*) as total_content 
@@ -45,7 +45,7 @@ GROUP BY type;
 
 ### 2  Find the most common rating for movies and TV shows
 
-sql```
+```sql
 SELECT 
 	type,
     rating
@@ -65,7 +65,7 @@ WHERE ranking = 1;
 
 ### 3 List all movies released in a specific year
 
-sql```
+```sql
 SELECT * FROM Netflix_Tab 
 WHERE
 	type = 'Movie'
@@ -76,7 +76,7 @@ WHERE
 
  ### 4 Find the top 5 countries with the most content on Netflix
  
-sql```
+```sql
 SELECT 
     TRIM(value) AS new_country, 
     COUNT(show_id) AS total_content
@@ -90,7 +90,7 @@ LIMIT 5;
 
 ### 5 Identify the longest movie
 
-sql```
+```sql
 SELECT * FROM Netflix_Tab 
 WHERE
 	type = 'Movie'
@@ -101,7 +101,7 @@ duration = (SELECT MAX(duration) FROM Netflix_Tab);
 
 ### 6 Find content added in last 5 years
 
-sql```
+```sql
 SELECT *  
 FROM Netflix_Tab  
 WHERE date_added_clean >= CURRENT_DATE - INTERVAL '5 years';
@@ -109,7 +109,7 @@ WHERE date_added_clean >= CURRENT_DATE - INTERVAL '5 years';
     
 ### 7 Find all the movies / Tv shows by director 'Toshiya Shinohara'
 
-sql ```
+```sql
 SELECT *
 FROM netflix_tab 
 WHERE director LIKE '%Toshiya Shinohara%';
@@ -117,7 +117,7 @@ WHERE director LIKE '%Toshiya Shinohara%';
 
 ### 8 List all TV shows with more than 5 seasons
 
-sql```
+```sql
 SELECT * FROM netflix_tab 
 WHERE 
 	type = 'Tv Show'
@@ -127,7 +127,7 @@ duration > '5 sessons';
 
 ### 9 Count the number of content items in each genre
 
-sql```
+```sql
 SELECT 
     TRIM(value) AS genre,
     COUNT(show_id) AS total_content
@@ -139,7 +139,7 @@ GROUP BY genre;
 
 ### 10 Find each year and the 
 
-sql```
+```sql
 SELECT 
     EXTRACT(YEAR FROM date_added_clean) AS year,
     COUNT(*) AS yearly_content,
@@ -156,7 +156,7 @@ ORDER BY year;
 
 ### 11 List all movies that are documentaries
 
-sql```
+```sql
 SELECT * FROM netflix_tab
 WHERE
 	listed_in LIKE '%Documentaries%' ;
@@ -164,7 +164,7 @@ WHERE
 
 ### 12 Find all the content  without director
 
-sql```
+```sql
 SELECT * FROM netflix_tab
 WHERE
 	director IS NULL ; 
